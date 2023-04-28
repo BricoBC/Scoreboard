@@ -9,3 +9,6 @@ El algoritmo Scoreboard también permite el uso de recursos compartidos, como re
 
 En general, el algoritmo Scoreboard es una técnica de ejecución de instrucciones avanzada que permite un procesamiento fuera de orden eficiente y el uso eficiente de los recursos del procesador. Aunque ha sido superado por técnicas más modernas, sigue siendo una técnica valiosa para la implementación de procesadores de alto rendimiento..
 ![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.slideserve.com%2Fdelilah-contreras%2Fescala-o-din-mica-algor-tmo-de-tomasulo&psig=AOvVaw0RQ8a6tv1f7ZFXV3RZU-lI&ust=1678320576129000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPC9_b-Fy_0CFQAAAAAdAAAAABAJ)
+
+
+Se utilizara un entorno virtual, las versiones de los paquetes usados se encuentran en el archivo paquetes.txt.
