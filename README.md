@@ -12,3 +12,5 @@ En general, el algoritmo Scoreboard es una técnica de ejecución de instruccion
 
 
 Se utilizara un entorno virtual, las versiones de los paquetes usados se encuentran en el archivo paquetes.txt.
+
+Si se desea instalar los paquetes usados en el entorno virtual se tiene que ejecutar el siguiente comando: pip install –r requirements.txt
