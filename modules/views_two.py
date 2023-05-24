@@ -61,5 +61,7 @@ def view(n):
     boton_ocultar = tk.Button(window1, text="Cerrar programa", command=close_program)
     boton_ocultar.grid(row=0,column=4)
 
+    btn_start = tk.Button(window1, text="Empezar", command=close_program)
+    btn_start.grid(row=value_spingbox+2,column=2)
 
     # Iniciar el bucle principal de la aplicación
