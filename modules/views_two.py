@@ -2,23 +2,27 @@
 import tkinter as tk
 window1 = tk.Tk()
 
-value_spingbox = 5
+value_spingbox = None
+
+#funcion para ocultar la ventana numero uno.
+def hide_window_inicial(window, value):
+    global value_spingbox 
+    window.withdraw() #método .wothdraw me permite ocultar la ventana
+    value_spingbox = int(value)                    
+    show_window_table_state_instructions()
 
 # funcion que permite activar la nueva ventana, 
 # ocultar la anterior y se activa la vista para la nueva ventana
 def show_window_table_state_instructions():
-    window1.deiconify()
+    window1.deiconify() #el método .deiconify me permite mostrar una venatan
     view(value_spingbox)
 #funcion para ocultar la ventana numero dos.
 def hide_window_table_state_instrucctions():
     window1.withdraw()
-#funcion para ocultar la ventana numero uno.
-def hide_window_inicial(window):
-    window.withdraw()
-    show_window_table_state_instructions()
 #funcion para cerrar el programa
 def close_program():
     window1.quit()
+
 #funcion que nos permite poner la misma fila n veces (n = al número que ponga el usuario en la primera ventana)
 def fila_cajas(n, r):   
     for i in range(n):
