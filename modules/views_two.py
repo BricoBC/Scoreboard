@@ -41,6 +41,8 @@ def fila_cajas(n, r):
 #función con elementos base y una llamada a la función de fila_cajas
 def view(n):
     r = 2
+    lbl_to_user = tk.Label(window1, text = 'Usa en INST: LF - ADDF - MULTF - DIVF - SUBF para tus instrucciones')
+    lbl_to_user.grid(row=0, column=0, columnspan=3)
 
     lbl_inst = tk.Label(window1, text = "INST")
     lbl_inst.grid(row=r-1, column=0)
@@ -57,6 +59,7 @@ def view(n):
     fila_cajas(n,r)
 
     boton_ocultar = tk.Button(window1, text="Cerrar programa", command=close_program)
-    boton_ocultar.grid(row=0,column=2)
+    boton_ocultar.grid(row=0,column=4)
+
 
     # Iniciar el bucle principal de la aplicación
