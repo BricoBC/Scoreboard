@@ -1,5 +1,6 @@
 import tkinter as tk
 import modules.views_two as v_2
+import modules.states as st
 
 window = tk.Tk()
 window.title("Scoreboard")
@@ -17,6 +18,7 @@ spinbox.grid(row=0, column=1)
 boton_mostrar = tk.Button(window, text="Ok", command=lambda: v_2.hide_window_inicial(window, spinbox.get()))
 boton_mostrar.grid(row=0, column=2)
 
-v_2.hide_window_table_state_instrucctions()
+v_2.hide_window()
+st.start()
 
 window.mainloop()

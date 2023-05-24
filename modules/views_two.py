@@ -1,3 +1,4 @@
+from . import states as st
 #Se crea la ventana para la segunda vista
 import tkinter as tk
 window1 = tk.Tk()
@@ -16,8 +17,9 @@ def hide_window_inicial(window, value):
 def show_window_table_state_instructions():
     window1.deiconify() #el método .deiconify me permite mostrar una venatan
     view(value_spingbox)
-#funcion para ocultar la ventana numero dos.
-def hide_window_table_state_instrucctions():
+
+#funcion para ocultar la ventana del modulo
+def hide_window():
     window1.withdraw()
 #funcion para cerrar el programa
 def close_program():
@@ -61,7 +63,7 @@ def view(n):
     boton_ocultar = tk.Button(window1, text="Cerrar programa", command=close_program)
     boton_ocultar.grid(row=0,column=4)
 
-    btn_start = tk.Button(window1, text="Empezar", command=close_program)
-    btn_start.grid(row=value_spingbox+2,column=2)
+    #btn_start = tk.Button(window1, text="Empezar", command=lambda: st.start )
+    #btn_start.grid(row=value_spingbox+2,column=2)
 
     # Iniciar el bucle principal de la aplicación
