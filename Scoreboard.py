@@ -19,6 +19,6 @@ boton_mostrar = tk.Button(window, text="Ok", command=lambda: v_2.hide_window_ini
 boton_mostrar.grid(row=0, column=2)
 
 v_2.hide_window()
-st.start()
+st.hidden()
 
 window.mainloop()

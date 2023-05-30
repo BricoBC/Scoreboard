@@ -60,8 +60,13 @@ def view(n):
     
     fila_cajas(n,r)
 
+    boton_siguiente = tk.Button(window1, text='Siguiente')
+    boton_siguiente.grid(row=0, column=3)
+
     boton_ocultar = tk.Button(window1, text="Cerrar programa", command=close_program)
     boton_ocultar.grid(row=0,column=4)
+
+
 
     #btn_start = tk.Button(window1, text="Empezar", command=lambda: st.start )
     #btn_start.grid(row=value_spingbox+2,column=2)
