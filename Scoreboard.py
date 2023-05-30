@@ -1,5 +1,5 @@
 import tkinter as tk
-
+clk=0
 #start the window
 window = tk.Tk()
 window.title("Scoreboard")
@@ -12,6 +12,7 @@ window.resizable(False, False)
 def close_program():
     window.destroy()
 
+#function to get titles of first table
 def obtener_titulos():
     lbl_Inst = tk.Label(window,text='INST')
     lbl_i = tk.Label(window,text='i')
@@ -38,6 +39,9 @@ def obtener_valores_entries():
         txt_i = i.get()
         txt_j = j.get()
         txt_k = k.get()
+        title_register.append(txt_i)
+        title_register.append(txt_j)
+        title_register.append(txt_k)
 
         lbl = tk.Label(window, text=txt_inst)
         lbl.grid(row=15+count, column=0)
@@ -49,7 +53,43 @@ def obtener_valores_entries():
         lbl.grid(row=15+count, column=3)
 
         count = count+1
-        
+    boton_mostrar.config(state=tk.DISABLED)
+    title_register.sort() #lista ordenada y con valores únicos
+    estado_unidades(15+count, 0)
+    print(title_register)
+
+#second table 
+def estado_unidades(r, c):
+    lbl_FU = tk.Label(window, text = "FU")        
+    lbl_FU.grid(row=r, column=c)
+    lbl_B = tk.Label(window, text = "B")        
+    lbl_B.grid(row=r, column=c+1)
+    lbl_op = tk.Label(window, text = "Op")        
+    lbl_op.grid(row=r, column=c+2)
+    lbl_i = tk.Label(window, text = "i")        
+    lbl_i.grid(row=r, column=c+3)
+    lbl_j = tk.Label(window, text = "j")        
+    lbl_j.grid(row=r, column=c+4)
+    lbl_k = tk.Label(window, text = "k")        
+    lbl_k.grid(row=r, column=c+5)
+    lbl_Qj = tk.Label(window, text = "Qj")        
+    lbl_Qj.grid(row=r, column=c+6)
+    lbl_Qk = tk.Label(window, text = "Qk")        
+    lbl_Qk.grid(row=r, column=c+7)
+    lbl_Rj = tk.Label(window, text = "Rj")        
+    lbl_Rj.grid(row=r, column=c+8)
+    lbl_Rk = tk.Label(window, text = "Rk")        
+    lbl_Rk.grid(row=r, column=c+9)
+    r,c = r+1, c+1
+    estado_register(r+1,c+1)
+
+def estado_register(r,c):
+    for title in title_register:
+        if title != '':
+            lbl = tk.Label(window, text = 'F'+title)        
+            lbl.grid(row=r, column=c)
+            c = c+1
+
 
 lbl_to_user = tk.Label(window, text = 'Usa en INST: LF - ADDF - MULTF - DIVF - SUBF para tus instrucciones')
 lbl_to_user.grid(row=0, column=0, columnspan=5)
@@ -66,6 +106,7 @@ lbl_j.grid(row=1, column=4)
 lbl_k = tk.Label(window, text = "k")
 lbl_k.grid(row=1, column=5)
 
+title_register = []
 arr_timer = []
 arr_many = []
 arr_inst = []
@@ -75,7 +116,6 @@ arr_k = []
 
 for i in range(2,8):
     #rows
-    
     cj_timer = tk.Entry(window, width=5)
     cj_timer.grid(row=i, column=0)
     arr_timer.append(cj_timer);
@@ -98,5 +138,8 @@ for i in range(2,8):
 # buttons for the nex operation
 boton_mostrar = tk.Button(window, text="Next", command=obtener_valores_entries)
 boton_mostrar.grid(row=10, column=4)
+
+lbl_clock = tk.Label(window, text=clk)
+lbl_clock.grid(row=10, column=5)
 
 window.mainloop()
