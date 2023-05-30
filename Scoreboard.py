@@ -1,10 +1,12 @@
 import tkinter as tk
-import modules.views_two as v_2
-import modules.states as st
+
 
 window = tk.Tk()
 window.title("Scoreboard")
 window.geometry("650x500")  # anchoXaltura
+
+def close_program():
+    window.destroy()
 
 lbl_to_user = tk.Label(window, text = 'Usa en INST: LF - ADDF - MULTF - DIVF - SUBF para tus instrucciones')
 lbl_to_user.grid(row=0, column=0, columnspan=3)
@@ -79,10 +81,8 @@ cj_txt_k.grid(row=7, column=3)
 boton_mostrar = tk.Button(window, text="Ok")
 boton_mostrar.grid(row=10, column=0)
 
-boton_ocultar = tk.Button(window, text="Cerrar programa")
+boton_ocultar = tk.Button(window, text="Cerrar programa", command=close_program)
 boton_ocultar.grid(row=10,column=3)
 
-def close_program():
-    window.quit()
 
 window.mainloop()
