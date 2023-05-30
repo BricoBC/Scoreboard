@@ -4,12 +4,33 @@ import tkinter as tk
 window = tk.Tk()
 window.title("Scoreboard")
 window.geometry("650x500")  # anchoXaltura
+window.resizable(False, False)
+
 
 #function to close the window
 def close_program():
     window.destroy()
 
+def obtener_titulos():
+    lbl_Inst = tk.Label(window,text='INST')
+    lbl_i = tk.Label(window,text='i')
+    lbl_j = tk.Label(window,text='j')
+    lbl_k = tk.Label(window,text='k')
+    lbl_FI = tk.Label(window,text='FI')
+    lbl_FO = tk.Label(window,text='FO')
+    lbl_EI = tk.Label(window,text='EI')
+    lbl_WO = tk.Label(window,text='WO')
+    lbl_Inst.grid(row=14, column=0)
+    lbl_i.grid(row=14, column=1)
+    lbl_j.grid(row=14, column=2)
+    lbl_k.grid(row=14, column=3)
+    lbl_FI.grid(row=14, column=4)
+    lbl_FO.grid(row=14, column=5)
+    lbl_EI.grid(row=14, column=6)
+    lbl_WO.grid(row=14, column=7)
+
 def obtener_valores_entries():
+    obtener_titulos()
     count = 0
     for inst, i, j, k in zip(arr_inst, arr_i, arr_j, arr_k):
         txt_inst = inst.get()
@@ -28,11 +49,10 @@ def obtener_valores_entries():
         lbl.grid(row=15+count, column=3)
 
         count = count+1
-        print(count)
         
 
 lbl_to_user = tk.Label(window, text = 'Usa en INST: LF - ADDF - MULTF - DIVF - SUBF para tus instrucciones')
-lbl_to_user.grid(row=0, column=0, columnspan=3)
+lbl_to_user.grid(row=0, column=0, columnspan=5)
 lbl_inst = tk.Label(window, text = "INST")
 lbl_inst.grid(row=1, column=0)
 lbl_i = tk.Label(window, text = "i")
@@ -49,25 +69,25 @@ arr_k = []
 
 for i in range(2,8):
     #rows
-    cj_txt_inst = tk.Entry(window)
+    cj_txt_inst = tk.Entry(window, width=5)
     cj_txt_inst.grid(row=i, column=0)
     arr_inst.append(cj_txt_inst);
-    cj_txt_i = tk.Entry(window)
+    cj_txt_i = tk.Entry(window, width=5)
     cj_txt_i.grid(row=i, column=1)
     arr_i.append(cj_txt_i)
-    cj_txt_j = tk.Entry(window)
+    cj_txt_j = tk.Entry(window, width=5)
     cj_txt_j.grid(row=i, column=2)
     arr_j.append(cj_txt_j)
-    cj_txt_k = tk.Entry(window)
+    cj_txt_k = tk.Entry(window, width=5)
     cj_txt_k.grid(row=i, column=3)
     arr_k.append(cj_txt_k)
 
 # buttons to close and nex operation
-boton_mostrar = tk.Button(window, text="Ok", command=obtener_valores_entries)
-boton_mostrar.grid(row=10, column=0)
+boton_mostrar = tk.Button(window, text="Next", command=obtener_valores_entries)
+boton_mostrar.grid(row=10, column=4)
 
-boton_ocultar = tk.Button(window, text="Cerrar programa", command=close_program)
-boton_ocultar.grid(row=10,column=3)
+# boton_ocultar = tk.Button(window, width=10, text="Close", command=close_program)
+# boton_ocultar.grid(row=10,column=3)
 
 
 window.mainloop()
